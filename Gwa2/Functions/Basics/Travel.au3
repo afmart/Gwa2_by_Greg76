@@ -45,5 +45,17 @@ Func LeaveGH()
 	SendPacket(0x8, $HEADER_GUILDHALL_LEAVE, 1)
 	Return WaitMapLoading()
 EndFunc   ;==>LeaveGH
+
+Func RndTravel($aMapID)
+	Local $UseDistricts = 11 ; 7=eu, 8=eu+int, 11=all(incl. asia)
+	; Region/Language order: eu-en, eu-fr, eu-ge, eu-it, eu-sp, eu-po, eu-ru, int, asia-ko, asia-ch, asia-ja
+	Local $Region[11]   = [2, 2, 2, 2, 2, 2, 2, -2, 1, 3, 4]
+	Local $Language[11] = [0, 2, 3, 4, 5, 9, 10, 0, 0, 0, 0]
+	Local $Random = Random(0, $UseDistricts - 1, 1)
+	MoveMap($aMapID, $Region[$Random], 0, $Language[$Random])
+	WaitMapLoading($aMapID, 30000)
+	Sleep(GetPing()+3000)
+EndFunc   ;==>RndTravel
+
 #EndRegion Travel
 

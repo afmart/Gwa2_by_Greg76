@@ -374,6 +374,15 @@ Func GetSkillTimer()
 	Return MemoryRead($mSkillTimer, "long")
 EndFunc   ;==>GetSkillTimer
 
+ ;Pass skill ID, returns True if you're under the effect
+Func HasEffect($Effect)
+	If DllStructGetData(GetEffect($Effect), 'SkillID') < 1 Then ; If you're not under effect
+		Return False
+	Else
+		Return True
+	EndIf
+ EndFunc   ;==>HasEffect
+
 Func GetProfPrimaryAttribute($aProfession)
 	Switch $aProfession
 		Case 1

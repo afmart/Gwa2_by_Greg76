@@ -18,6 +18,9 @@
 
 #include "Gwa2\Functions\Items\Items.au3"
 #include "Gwa2\Functions\Items\Slot.au3"
+#include "Gwa2\Functions\Items\Count.au3"
+#include "Gwa2\Functions\Items\Pickup.au3"
+#include "Gwa2\Functions\Items\Storage.au3"
 
 #include "Gwa2\Functions\Skills\Buff.au3"
 #include "Gwa2\Functions\Skills\Skillbar.au3"

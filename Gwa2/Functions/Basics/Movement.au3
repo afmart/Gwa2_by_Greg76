@@ -142,6 +142,27 @@ Func GoToSignpost($aAgent)
 	Sleep(GetPing() + Random(1500, 2000, 1))
 EndFunc   ;==>GoToSignpost
 
+Func GoNearestNPCToCoords($x, $y)
+	Local $guy, $Me
+	Do
+		RndSleep(250)
+		$guy = GetNearestNPCToCoords($x, $y)
+	Until DllStructGetData($guy, 'Id') <> 0
+	ChangeTarget($guy)
+	RndSleep(250)
+	GoNPC($guy)
+	RndSleep(250)
+	Do
+		RndSleep(500)
+		Move(DllStructGetData($guy, 'X'), DllStructGetData($guy, 'Y'), 40)
+		RndSleep(500)
+		GoNPC($guy)
+		RndSleep(250)
+		$Me = GetAgentByID(-2)
+	Until ComputeDistance(DllStructGetData($Me, 'X'), DllStructGetData($Me, 'Y'), DllStructGetData($guy, 'X'), DllStructGetData($guy, 'Y')) < 250
+	RndSleep(1000)
+EndFunc   ;==>GoNearestNPCToCoords
+
 ;~ Description: Attack an agent.
 Func Attack($aAgent, $aCallTarget = False)
 	Local $lAgentID
