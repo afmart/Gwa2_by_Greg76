@@ -10,7 +10,7 @@ Modified by; Greg76
 
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Outfile_type=a3x
-#AutoIt3Wrapper_Outfile=..\Exe\Tools_Bot-dev.a3x
+#AutoIt3Wrapper_Outfile=..\Exe\Bot_Vaettir-Assassin-farm.a3x
 #AutoIt3Wrapper_Run_AU3Check=n
 #AutoIt3Wrapper_Run_Tidy=y
 #AutoIt3Wrapper_Run_Au3Stripper=y

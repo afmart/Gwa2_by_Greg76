@@ -111,7 +111,6 @@ Func CanPickUp($aItem)
 		EndIf
 	ElseIf ($lRarity == $RARITY_Gold) Then ; gold items
 		Return True
-
 	ElseIf($lModelID == $Lockpick) Then
 		Return True ; Lockpicks
 	ElseIf($lModelID == $ITEM_ID_Glacial_Stone) Then
